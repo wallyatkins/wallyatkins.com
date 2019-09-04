@@ -140,22 +140,24 @@ body { margin: auto; }
 <script src="https://unpkg.com/splitting/dist/splitting.js"></script>
 </head>
 <body>
-<h1>
+<div id="neontext">
+ <h1>
   <span>W</span>
   <span>a</span>
   <span>l</span>
   <span>l</span>
   <span>y</span>
-</h1>
-<h1>
+ </h1>
+ <h1>
   <span>A</span>
   <span>t</span>
   <span>k</span>
   <span>i</span>
   <span>n</span>
   <span>s</span>
-</h1>
-<div class="title">
+ </h1>
+</div>
+<div id="lasertext" class="title">
   <span class="text write" data-splitting="lines">
     RETRO<br/>
     LASER<br/>
@@ -167,6 +169,13 @@ body { margin: auto; }
     WRITE
   </span>
 </div>
-<script>Splitting();</script>
+<script>
+  Splitting();
+  if (new Date().getDay() % 2){
+    document.getElementById("lasertext").style.display='none';
+  } else {
+    document.getElementById("neontext").style.display='none';
+  }
+</script>
 </body>
 </html>
